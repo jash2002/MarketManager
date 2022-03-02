@@ -1,2 +1,2 @@
 # MarketManager
-group Project 2022
+Group Project 2022

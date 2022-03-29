@@ -23,7 +23,7 @@ CREATE TABLE SavedAssets(
     CONSTRAINT FK_userID FOREIGN KEY (userID)
     REFERENCES UserAccounts(userID),
 
-    assetName VARCHAR(20) NOT NULL,
+    assetName VARCHAR(20),
     assetSymbol VARCHAR(10) NOT NULL
 );
 

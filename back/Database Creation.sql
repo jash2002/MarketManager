@@ -1,6 +1,6 @@
 CREATE DATABASE MarketManagerDB;
 
-use MarketManagerDB -- This selects the MarketManagerDB
+use MarketManagerDB; -- This selects the MarketManagerDB
 
 show tables; -- Displays all tables
 

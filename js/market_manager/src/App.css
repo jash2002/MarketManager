@@ -1,9 +1,22 @@
-.bg-mmColour {
-  background-color: #88d4b4;
+:root {
+  --mainColour: #88d4b4;
 }
 
-#navBrand {
+.navbar {
+  background-color: var(--mainColour);
+}
+
+.navbar-nav .nav-item {
   color: #fff;
+}
+
+/* Very specific because of the how the footer shows up on those pages */
+.sign-up-page, .sign-in-page {
+  height: 83vh;
+}
+/* Specific for the same reason as above */
+.not-found-page {
+  height: 88vh;
 }
 
 #signInLink {
@@ -14,4 +27,12 @@
 
 .formHeader {
   color: #000 !important;
+}
+
+.main-footer {
+  margin-top: auto;
+  padding: 10px 10px;
+  bottom: 0;
+  width: 100%;
+  background: var(--mainColour);
 }

@@ -21,6 +21,9 @@ function theNavbar() {
                         <li class="nav-item">
                             <Link class="nav-link text-white" to="/help">Help</Link>
                         </li>
+                        <li class="nav-item">
+                            <Link class="nav-link text-white" to="/news">News</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

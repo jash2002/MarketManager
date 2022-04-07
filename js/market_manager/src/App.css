@@ -36,3 +36,14 @@
   width: 100%;
   background: var(--mainColour);
 }
+
+.card {
+  width: 40%;
+  margin: 2rem;
+}
+
+.card-body a {
+  color: #000;
+}
+
+/* No styling yet for mobile version */

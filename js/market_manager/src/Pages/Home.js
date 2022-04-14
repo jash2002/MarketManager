@@ -7,6 +7,7 @@ class Home extends Component {
 // Hella home page headers to check how footer worked (lol)
             <div>
                 <ChartCard ticker = 'AAPL'/>
+                <ChartCard ticker = 'IBM'/>
                 <h1>Home Page</h1>
                 <h1>Home Page</h1>
                 <h1>Home Page</h1>

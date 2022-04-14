@@ -6,25 +6,37 @@ class ChartCard extends Component {
 
     constructor(props) {
         super(props)
+        var d = new Date()
+        d.setDate(d.getDate()-1);
         this.state = ({
-            APIparams: 'symbol='+props.ticker+'&date=today&interval=5min',
+            APIparams: 'symbol='+this.props.ticker+'&start_date='+this.toAPIdateString(d)+'&interval=5min',
             ticker: props.ticker
         })
         this.handleSelect = this.handleSelect.bind(this)
     }
 
+    toAPIdateString(d) {
+        var dateString = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()
+        return dateString;
+    }
+
     handleSelect(key) {
+        console.log('handling select')
+        var d = new Date()
         var currentParams = 'symbol='+this.state.ticker
         var newAPIparams = ''
         switch (key) {
             case 'today':
-                newAPIparams = currentParams.concat('&date=today&interval=5min')
+                d.setDate(d.getDate()-1);
+                newAPIparams = currentParams.concat('&start_date='+this.toAPIdateString(d)+'&interval=1min')
                 break;
             case '5days':
-                newAPIparams = currentParams.concat('&interval=1h&outputsize=120')
+                d.setDate(d.getDate()-5);
+                newAPIparams = currentParams.concat('&start_date='+this.toAPIdateString(d)+'&interval=5min')
                 break;
             case '1month':
-                newAPIparams = currentParams.concat('&interval=4h&outputsize=168')
+                d.setDate(d.getDate()-28);
+                newAPIparams = currentParams.concat('&start_date='+this.toAPIdateString(d)+'&interval=30min')
                 break;
             default:
                 break;
@@ -37,11 +49,11 @@ class ChartCard extends Component {
     render() {
         return (
             <div>
-                <Card>
+                <Card width='100%'>
                     <Card.Header>
-                        <Nav variant="pills" defaultActiveKey="#first" onSelect={this.handleSelect}>
+                        <Nav variant="pills" defaultActiveKey='today' onSelect={this.handleSelect}>
                             <Nav.Item>
-                                <Nav.Link eventKey='today' href="#first">Today</Nav.Link>
+                                <Nav.Link eventKey='today'>Today</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link eventKey='5days'>5D</Nav.Link>
@@ -52,7 +64,7 @@ class ChartCard extends Component {
                         </Nav>
                     </Card.Header>
                     <Card.Body>
-                        <CandleStickChart ticker='AAPL' APIparams={this.state.APIparams} height={450} width='100%'/>
+                        <CandleStickChart ticker={this.state.ticker} APIparams={this.state.APIparams} height={450} width='100%'/>
                     </Card.Body>
                 </Card>
             </div>

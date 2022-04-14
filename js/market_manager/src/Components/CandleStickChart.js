@@ -52,9 +52,10 @@ class CandleStickChart extends React.Component {
          * Unsafe to really store in React files, and have it on github.
          * For now, copy from discord, and remove before commiting.
          */
-        const API_KEY = '1342ec4264ea43d384a7ad5673a7d5ac'
+        const API_KEY = ''
         let API_Call = 'https://api.twelvedata.com/'+this.state.type+APIparams+'&apikey='+API_KEY;
         const that = this;
+        console.log(API_Call)
         fetch(API_Call)
         .then(
             function(response) {
@@ -64,6 +65,7 @@ class CandleStickChart extends React.Component {
         .then(
             function(data) {
                 var parsedData = JSON.parse(JSON.stringify(data.values))
+                console.log(parsedData)
                 var formattedData = []
                 // Reformat data into date and floats.
                 for (var currentInterval in parsedData) {
@@ -77,6 +79,7 @@ class CandleStickChart extends React.Component {
                         ]
                     )
                 }
+                console.log(formattedData)
                 const newData = [{data: formattedData}]
                 // Update data for graph.
                 that.setState({series: newData});

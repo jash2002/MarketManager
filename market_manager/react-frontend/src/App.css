@@ -24,6 +24,25 @@
   color: #000;
 }
 
+.welcome {
+  font-family: Arial;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.welcome-body {
+  font-family: Arial;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.start-button {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
 
 .formHeader {
   color: #000 !important;

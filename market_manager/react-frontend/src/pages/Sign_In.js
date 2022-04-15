@@ -3,12 +3,10 @@
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { useEffect, useContext } from 'react';
-import AuthContext from '../Context/AuthProvider';
 
 
 function Sign_In() {
 
-  const { setAuth } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

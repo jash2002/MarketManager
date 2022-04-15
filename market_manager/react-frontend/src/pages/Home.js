@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChartCard from '../Components/ChartCard';
+import ChartCard from '../components/ChartCard';
 import {Button} from 'react-bootstrap'
 import { Link } from "react-router-dom";
 

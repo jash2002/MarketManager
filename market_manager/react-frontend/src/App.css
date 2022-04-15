@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+:root {
+  --mainColour: #88d4b4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: var(--mainColour);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-nav .nav-item {
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Very specific because of the how the footer shows up on those pages */
+.sign-up-page, .sign-in-page {
+  height: 83vh;
+}
+/* Specific for the same reason as above */
+.not-found-page {
+  height: 88vh;
 }
 
-.App-link {
-  color: #61dafb;
+#signInLink {
+  text-decoration: none;
+  color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.formHeader {
+  color: #000 !important;
 }
+
+.main-footer {
+  margin-top: auto;
+  padding: 10px 10px;
+  bottom: 0;
+  width: 100%;
+  background: var(--mainColour);
+}
+
+.card {
+  width: 40%;
+  margin: 2rem;
+}
+
+.card-body a {
+  color: #000;
+}
+
+/* No styling yet for mobile version */

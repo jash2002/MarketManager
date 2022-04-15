@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChartCard from '../Components/ChartCard';
+import ChartCard from '../components/ChartCard';
 
 class Home extends Component {
     render() {

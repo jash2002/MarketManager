@@ -4,12 +4,15 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 
+// importing the api
+import UserComponent from '../components/UserComponent';
+
+
 function App() {
   return (
 
     <div className="App">
-
-      
+     
 
       {/* 
       The commented code below was the original navbar, don't think we need it but keeping it there incase
@@ -53,6 +56,10 @@ function App() {
 
         </Form>
       </Container>
+
+      {/* api */}
+      <UserComponent /> 
+
     </div>
 
 

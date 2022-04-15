@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Card, Nav, Button} from 'react-bootstrap';
-import CandleStickChart from '../Components/CandleStickChart';
+import CandleStickChart from '../components/CandleStickChart';
 
 class ChartCard extends Component {
 

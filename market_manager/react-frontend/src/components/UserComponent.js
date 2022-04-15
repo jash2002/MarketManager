@@ -23,7 +23,6 @@ class UserComponent extends React.Component {
                 <table className = "table table-striped">
                     <thead>
                         <tr>
-
                             <td> User Id</td>
                             <td> User First Name</td>
                             <td> User Last Name</td>

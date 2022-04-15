@@ -4,6 +4,8 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { useEffect, useContext } from 'react';
 
+import UserComponent from '../components/UserComponent';
+
 
 function Sign_In() {
 
@@ -57,9 +59,9 @@ function Sign_In() {
 
         </Form>
       </Container>
+
+      <UserComponent />
     </div>
-
-
   );
 }
 

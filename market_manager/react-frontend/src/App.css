@@ -1,0 +1,91 @@
+:root {
+  --mainColour: #88d4b4;
+}
+
+.navbar {
+  background-color: var(--mainColour);
+}
+
+.navbar-nav .nav-item {
+  color: #fff;
+}
+
+/* Very specific because of the how the footer shows up on those pages */
+.sign-up-page, .sign-in-page {
+  height: 83vh;
+}
+/* Specific for the same reason as above */
+.not-found-page, .emailSent {
+  height: 88vh;
+}
+
+#signInLink {
+  text-decoration: none;
+  color: #000;
+}
+
+<<<<<<< HEAD:js/market_manager/src/App.css
+#signInLink:hover {
+  text-decoration: underline;
+}
+
+.plus-btn {
+  background-color: var(--mainColour);
+  position: fixed;
+  height: 4rem;
+  width: 4rem;
+  right: 30px;
+  bottom: 30px;
+  z-index: 999;
+  border-radius: 50px;
+  cursor: pointer;
+=======
+.welcome {
+  font-family: Arial;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.welcome-body {
+  font-family: Arial;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.start-button {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+>>>>>>> d792c401b8914f8bd4c055bc8d63eeb78c45023c:market_manager/react-frontend/src/App.css
+}
+
+.formHeader {
+  color: #000 !important;
+}
+
+.main-footer {
+  margin-top: auto;
+  padding: 10px 10px;
+  bottom: 0;
+  width: 100%;
+  background: var(--mainColour);
+}
+
+.card {
+  width: 55%;
+  margin: 2rem;
+}
+
+.card-body a {
+  color: #000;
+}
+
+/* No styling yet for mobile version */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 70%;
+    margin: 2rem;
+  }
+}

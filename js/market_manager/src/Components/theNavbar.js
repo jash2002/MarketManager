@@ -19,9 +19,6 @@ function theNavbar() {
                             <Link class="nav-link text-white" to="/signIn">My Account</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link text-white" to="/help">Help</Link>
-                        </li>
-                        <li class="nav-item">
                             <Link class="nav-link text-white" to="/news">News</Link>
                         </li>
                     </ul>

@@ -1,7 +1,6 @@
-// import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { UilPlus } from '@iconscout/react-unicons'
 
 
 function App() {
@@ -44,11 +43,16 @@ function App() {
             <Form.Control type="password" placeholder="Repeat Password" />
           </Form.Group>
           <div className="d-flex justify-content-between align-items-center" >
-            <Link to="/signUp" id="signInLink">Don't have an account? Sign up!</Link>
+            <div className="">
+            <Link to="/signUp" id="signInLink">Don't have an account? Sign up!<br></br></Link>
+            <Link to="/forgottenPassword" id="signInLink">Forgotten your password?</Link>
+            </div>
             {/* <a href="Sign_Up.js" id="signInLink">Don't have an account? Sign up!</a> */}
             <Button variant="primary" type="submit">
-              Sign Up
+              Sign In
+              
             </Button>
+            
           </div>
 
         </Form>

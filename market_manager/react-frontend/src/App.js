@@ -18,6 +18,7 @@ import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 import ForgotPassword from "./pages/ForgottenPassword";
 import EmailSent from "./pages/EmailSent";
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Navbar />
         <Routes>
         <Route exact path="/" element={<Home />}></Route>
+        <Route exact path="/dashboard" element={<Dashboard />}></Route>
         <Route exact path="/signIn" element={<SignIn />}></Route>
         <Route exact path="/signUp" element={<SignUp />}></Route>
         <Route exact path="/forgottenPassword" element={<ForgotPassword />}></Route>

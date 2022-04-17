@@ -48,8 +48,8 @@ class ChartCard extends Component {
 
     render() {
         return (
-            <div>
-                <Card width='100%'>
+            <div style={{margin: 0}}>
+                <Card style = {{width : '100%', padding:0, marginLeft:0, marginRight:0}}>
                     <Card.Header>
                         <Nav variant="pills" defaultActiveKey='today' onSelect={this.handleSelect}>
                             <Nav.Item>

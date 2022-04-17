@@ -13,6 +13,9 @@ class Home extends Component {
                 <div className="start-button">
                     <Button as={Link} to="./signIn" variant="primary" size="lg">Get Started</Button>
                 </div>
+                <div className="start-button">
+                    <Button as={Link} to="./Dashboard" variant="secondary" size="lg">Test Dashboard</Button>
+                </div>
             </div>
         );
     }

@@ -1,16 +1,14 @@
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-<<<<<<< HEAD:js/market_manager/src/Pages/Sign_In.js
 import { UilPlus } from '@iconscout/react-unicons'
-=======
 import { useEffect, useContext } from 'react';
->>>>>>> d792c401b8914f8bd4c055bc8d63eeb78c45023c:market_manager/react-frontend/src/pages/Sign_In.js
-
 import UserComponent from '../components/UserComponent';
+import AuthContext from '../context/AuthProvider'
 
 
 function Sign_In() {
 
+  const { setAuth } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

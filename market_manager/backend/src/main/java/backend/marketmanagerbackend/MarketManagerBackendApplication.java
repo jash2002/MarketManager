@@ -21,8 +21,9 @@ public class MarketManagerBackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-        this.userRepository.save(new User("Ramesh", "Fadatare", "ramesh@gmail.com"));
-        this.userRepository.save(new User("Tom", "Cruise", "tom@gmail.com"));
-        this.userRepository.save(new User("Tony", "Stark", "tony@gmail.com"));
+        String[] tickers = {"AAPL", "IBM"};
+        this.userRepository.save(new User("Ramesh", "Fadatare", "ramesh@gmail.com", "password", tickers));
+        this.userRepository.save(new User("Tom", "Cruise", "tom@gmail.com", "password", tickers));
+        this.userRepository.save(new User("Tony", "Stark", "tony@gmail.com", "password", tickers));
     }
 }

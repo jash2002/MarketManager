@@ -23,19 +23,26 @@ public class User {
 
     private String email;
 
+    private String username;
+
     private String password;
+
+    private String[] tickers;
 
     public User() {
 
     }
 
-    public User(String firstName, String lastName, String email, String password) {
+    public User(String firstName, String lastName, String email, String password, String[] tickers) {
         super();
+        this.username = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.tickers = tickers;
     }
+    
     public long getId() {
         return id;
     }
@@ -67,5 +74,20 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String[] getTickers() {
+        return tickers;
+    }
+
+    public void setTickers(String[] tickers) {
+        this.tickers = tickers;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

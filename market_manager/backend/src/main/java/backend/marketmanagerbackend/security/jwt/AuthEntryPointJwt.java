@@ -1,4 +1,4 @@
-package main.java.backend.marketmanagerbackend.security.jwt;
+package backend.marketmanagerbackend.security.jwt;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

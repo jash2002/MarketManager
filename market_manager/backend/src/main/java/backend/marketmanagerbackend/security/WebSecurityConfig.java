@@ -1,6 +1,8 @@
-package main.java.backend.marketmanagerbackend.security;
+package backend.marketmanagerbackend.security;
 
-
+import backend.marketmanagerbackend.security.services.UserDetailsServiceImpl;
+import backend.marketmanagerbackend.security.jwt.AuthEntryPointJwt;
+import backend.marketmanagerbackend.security.jwt.AuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -54,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http.cors().and().csrf().disable()
       .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
       .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-      .authorizeRequests().antMatchers("/api/auth/**").permitAll()
+      .authorizeRequests().antMatchers("/api/users/**").permitAll()
       .antMatchers("/api/test/**").permitAll()
       .anyRequest().authenticated();
 

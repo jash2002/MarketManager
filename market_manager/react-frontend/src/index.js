@@ -6,12 +6,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider'
 
 ReactDOM.render(
-  <AuthProvider>
-    <Router>
-      <App />
-    </Router>,
-    document.getElementById('root')
-  </AuthProvider>
+  <React.StrictMode>
+    <AuthProvider>
+      <Router>
+        <App />
+      </Router>
+    </AuthProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

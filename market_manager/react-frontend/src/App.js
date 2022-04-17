@@ -21,7 +21,7 @@ import EmailSent from "./pages/EmailSent";
 
 function App() {
   return (
-    <div className="App">
+    <div className="main-container">
 
     {/* <div className="App"> */}
       <Navbar />

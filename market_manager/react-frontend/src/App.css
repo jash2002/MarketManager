@@ -48,12 +48,12 @@
 
 .welcome-body {
   font-family: Arial;
-  padding-top: 15px;
+  padding-top: 30px;
   text-align: center;
 }
 
 .start-button {
-  padding-top: 15px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +70,12 @@
   bottom: 0;
   width: 100%;
   background: var(--mainColour);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .card {

@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
+
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,7 +26,7 @@ import backend.marketmanagerbackend.payload.request.LoginRequest;
 import backend.marketmanagerbackend.payload.response.JwtResponse;
 import backend.marketmanagerbackend.payload.response.MessageResponse;
 import backend.marketmanagerbackend.security.jwt.JwtUtils;
-import backend.marketmanagerbackend.security.services.UserDetailsImpl;
+import backend.marketmanagerbackend.security.services.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -70,4 +72,22 @@ public class UserController {
         userRepository.save(user);
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
+
+    // Code for update and delete
+    // @PutMapping("/update")
+    // public User updateUser(@Valid @RequestBody LoginRequest loginRequest, @RequestBody User user) {
+    //     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+	// 	SecurityContextHolder.getContext().setAuthentication(authentication);
+	// 	String jwt = jwtUtils.generateJwtToken(authentication);
+    //     UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    //     return accService.updateUser(user);
+    //     // return ResponseEntity.ok(new JwtResponse(jwt, accService.updateUser(user));
+    // }
+
+    // @DeleteMapping("/delete/{id}")
+    // public String deleteUser(@PathVariable int id) {
+
+
+    //     return accService.deleteUser(id);
+    // }
 }

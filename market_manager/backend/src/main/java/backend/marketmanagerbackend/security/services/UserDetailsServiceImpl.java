@@ -30,6 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         existingUser.setTickers(user.getTickers());
         return userRepository.save(existingUser);
     }
+    
     public String deleteUser(int id) {
         userRepository.deleteById(id);
         return "User has been removed";

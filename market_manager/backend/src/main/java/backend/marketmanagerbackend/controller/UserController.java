@@ -1,6 +1,7 @@
 package backend.marketmanagerbackend.controller;
 
 import java.util.List;
+import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import backend.marketmanagerbackend.model.User;
 import backend.marketmanagerbackend.repository.UserRepository;
 import backend.marketmanagerbackend.payload.request.SignupRequest;
 import backend.marketmanagerbackend.payload.request.LoginRequest;
+import backend.marketmanagerbackend.payload.request.TickersUpdateRequest;
 import backend.marketmanagerbackend.payload.response.JwtResponse;
 import backend.marketmanagerbackend.payload.response.MessageResponse;
 import backend.marketmanagerbackend.security.jwt.JwtUtils;
@@ -69,5 +71,22 @@ public class UserController {
         User user = new User(signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getTickers());
         userRepository.save(user);
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @PostMapping("/updatetickers")
+    public ResponseEntity<?> updateTickers(@Valid @RequestBody TickersUpdateRequest tickersUpdateRequest) {
+        if(!(jwtUtils.validateJwtToken(tickersUpdateRequest.getAccessToken()))) {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Cannot validate JWT!"));
+        }
+        String username = jwtUtils.getUserNameFromJwtToken(tickersUpdateRequest.getAccessToken());
+        Optional<User> user = userRepository.findByUsername(username);
+        if(user.isPresent()) {
+            User _user = user.get();
+            _user.setTickers(tickersUpdateRequest.getTickers());
+            userRepository.save(_user);
+            return ResponseEntity.ok(new MessageResponse("Tickers updated successfully!"));
+        } else {
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: Could not update tickers!"));
+        }
     }
 }

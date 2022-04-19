@@ -20,4 +20,22 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 		return UserDetailsImpl.build(user);
 	}
+
+	// Code for update and delete
+	public User updateUser(User user) {
+        User existingUser = userRepository.findById(user.getId()).orElse(null);
+        existingUser.setUsername(user.getUsername());
+        existingUser.setEmail(user.getEmail());
+        existingUser.setPassword(user.getPassword());
+        existingUser.setTickers(user.getTickers());
+        return userRepository.save(existingUser);
+    }
+    
+    public String deleteUser(int id) {
+        userRepository.deleteById(id);
+        return "User has been removed";
+    }
+
+
+
 }

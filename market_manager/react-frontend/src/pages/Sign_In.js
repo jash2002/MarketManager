@@ -3,17 +3,44 @@ import { Link } from "react-router-dom";
 import { UilPlus } from '@iconscout/react-unicons'
 import { useEffect, useContext } from 'react';
 import UserComponent from '../components/UserComponent';
-import AuthContext from '../context/AuthProvider'
+import AuthContext from '../context/AuthProvider';
+import axios from '../API/Axios';
+import { useNavigate } from "react-router-dom";
+
+const LOGIN_URL = '/api/signin';
 
 
 function Sign_In() {
 
   const { setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
+    const username = e.target.email.value;
+    const password = e.target.password.value;
+    try {
+      const response = await axios.post(LOGIN_URL,JSON.stringify({username, password}),
+      {
+        headers: {
+          'Content-Type':'application/json'},
+          'Access-Control-Allow-Origin': '*',
+      });
+      const accessToken = response?.data?.accessToken;
+      const tickers = response?.data?.tickers;
+      setAuth({username, password, tickers, accessToken})
+      navigate("/dashboard")
+    } catch (err) {
+      if (!err?.response) {
+        alert('No Server Response');
+      } else if (err.response?.status === 400) {
+        alert('Missing Username or Password');
+      } else if (err.response?.status === 401) {
+        alert('Email or password is incorrect');
+      } else {
+        alert('Login Failed');
+      }
+    }
   }
 
   return (
@@ -64,8 +91,6 @@ function Sign_In() {
 
         </Form>
       </Container>
-      {/* Calls the backend */}
-      <UserComponent />
     </div>
   );
 }

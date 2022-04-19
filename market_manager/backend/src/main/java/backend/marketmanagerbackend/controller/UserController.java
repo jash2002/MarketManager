@@ -69,6 +69,5 @@ public class UserController {
         User user = new User(signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getTickers());
         userRepository.save(user);
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-
     }
 }

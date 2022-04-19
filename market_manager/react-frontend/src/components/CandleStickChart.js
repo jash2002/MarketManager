@@ -66,7 +66,6 @@ class CandleStickChart extends React.Component {
             function(data) {
                 var parsedResponse = JSON.parse(JSON.stringify(data))
                 const parsedData = parsedResponse.values
-                console.log(parsedData)
                 var formattedData = []
                 // Reformat data into date and floats.
                 for (var currentInterval in parsedData) {
@@ -80,18 +79,11 @@ class CandleStickChart extends React.Component {
                         ]
                     )
                 }
-                console.log(formattedData)
                 const newData = [{data: formattedData}]
                 // Update data for graph.
                 that.setState({series: newData});
             }
         )
-    }
-
-    componentDidUpdate(prevProps) {
-        if (this.props.APIparams !== prevProps.APIparams) {
-            this.fetchStock(this.props.APIparams)
-        }
     }
 
     render(){

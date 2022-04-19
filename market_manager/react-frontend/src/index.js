@@ -6,13 +6,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <AuthProvider>
       <Router>
         <App />
       </Router>
     </AuthProvider>
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change

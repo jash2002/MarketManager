@@ -19,8 +19,12 @@ import NotFound from "./pages/NotFound";
 import ForgotPassword from "./pages/ForgottenPassword";
 import EmailSent from "./pages/EmailSent";
 import Dashboard from './pages/Dashboard';
+import { AuthProvider } from './context/AuthProvider'
+import {useContext, createContext} from 'react';
+
 
 function App() {
+
   return (
     <div className="main-container">
 

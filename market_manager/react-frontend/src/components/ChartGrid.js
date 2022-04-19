@@ -3,10 +3,10 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import ChartCard from './ChartCard';
 
-export default function ChartGrid() {
+export default function ChartGrid(props) {
 
     //  QUERY REST API TO GET USER TICKERS
-    const tickers = ["AAPL", "IBM"]
+    const tickers = props.tickers;
 
     const getColumnsForRow =()=> {
         let items = tickers.map((newTicker) => {

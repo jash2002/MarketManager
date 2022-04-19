@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const LOGIN_URL = '/api/signin';
 
 
-function Sign_In() {
+const Sign_In = () => {
 
   const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -28,11 +28,12 @@ function Sign_In() {
       });
       const accessToken = response?.data?.accessToken;
       const tickers = response?.data?.tickers;
-      setAuth({username, password, tickers, accessToken})
+      setAuth({ username, password, tickers, accessToken });
       navigate("/dashboard")
     } catch (err) {
       if (!err?.response) {
         alert('No Server Response');
+        console.log(err);
       } else if (err.response?.status === 400) {
         alert('Missing Username or Password');
       } else if (err.response?.status === 401) {
@@ -46,25 +47,6 @@ function Sign_In() {
   return (
 
     <div className="App">
-
-      
-
-      {/* 
-      The commented code below was the original navbar, don't think we need it but keeping it there incase
-
-      <Navbar bg="mmColour" fixed="top" variant="light" expand="sm" collapseOnSelect
-        className="px-2">
-        <Navbar.Brand id="navBrand" className="px-2">MarketManager</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse >
-          <Nav variant="dark">
-            <Nav.Link href="#" variant="primary">Home</Nav.Link>
-            <Nav.Link href="#">My Account</Nav.Link>
-            <Nav.Link href="#">Help</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar> */}
-
       <Container className="mt-5 pt-5 sign-in-page">
         <h1 id="formHeader" className="d-flex justify-content-center">Sign In</h1>
         <Form onSubmit={handleSubmit}>

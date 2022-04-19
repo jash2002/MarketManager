@@ -6,9 +6,9 @@ public class JwtResponse {
   private String type = "Bearer";
   private String username;
   private String email;
-  private String[] tickers;
+  private String tickers;
 
-  public JwtResponse(String accessToken, String username, String email, String[] tickers){
+  public JwtResponse(String accessToken, String username, String email, String tickers){
     this.token = accessToken;
     this.username = username;
     this.email = email;
@@ -47,11 +47,11 @@ public class JwtResponse {
     this.username = username;
   }
 
-  public String[] getTickers() {
+  public String getTickers() {
     return tickers;
   }
 
-  public void setTickers(String[] tickers) {
+  public void setTickers(String tickers) {
     this.tickers = tickers;
   }
 }

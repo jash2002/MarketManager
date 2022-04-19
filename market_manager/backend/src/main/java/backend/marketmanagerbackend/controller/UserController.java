@@ -66,8 +66,9 @@ public class UserController {
 					.badRequest()
 					.body(new MessageResponse("Error: Email is already in use!"));
 		}
-        User user = new User(signUpRequest.getEmail(), signUpRequest.getPassword(), signUpRequest.getTickers());
+        User user = new User(signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()), signUpRequest.getTickers());
         userRepository.save(user);
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+
     }
 }

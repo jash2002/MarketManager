@@ -15,25 +15,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //@Column(name = "first_name")
-    //private String firstName;
-
-    //@Column(name = "last_name")
-    //private String lastName;
-
     private String email;
 
     private String username;
 
     private String password;
 
-    private String[] tickers;
+    private String tickers;
 
     public User() {
 
     }
 
-    public User(String email, String password, String[] tickers) {
+    public User(String email, String password, String tickers) {
         super();
         this.username = email;
         //this.firstName = firstName;
@@ -76,11 +70,11 @@ public class User {
         this.password = password;
     }
 
-    public String[] getTickers() {
+    public String getTickers() {
         return tickers;
     }
 
-    public void setTickers(String[] tickers) {
+    public void setTickers(String tickers) {
         this.tickers = tickers;
     }
 

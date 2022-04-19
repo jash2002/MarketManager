@@ -16,7 +16,7 @@ public class SignupRequest {
   @Size(min = 6, max = 40)
   private String password;
 
-  private String[] tickers;
+  private String tickers;
 
   public String getUsername() {
     return username;
@@ -42,11 +42,11 @@ public class SignupRequest {
     this.password = password;
   }
 
-  public String[] getTickers() {
+  public String getTickers() {
     return tickers;
   }
 
-  public void setTickers(String[] tickers) {
+  public void setTickers(String tickers) {
     this.tickers = tickers;
   }
 

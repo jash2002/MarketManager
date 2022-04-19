@@ -14,9 +14,9 @@ public class UserDetailsImpl implements UserDetails {
 	private String username;
 	private String email;
 	private String password;
-    private String[] tickers;
+    private String tickers;
     
-	public UserDetailsImpl(String username, String email, String password, String[] tickers) {
+	public UserDetailsImpl(String username, String email, String password, String tickers) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -36,7 +36,7 @@ public class UserDetailsImpl implements UserDetails {
 		return email;
 	}
 
-    public String[] getTickers() {
+    public String getTickers() {
         return tickers;
     }
 

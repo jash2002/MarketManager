@@ -16,7 +16,7 @@ function theNavbar() {
                             <Link class="nav-link text-white" aria-current="page" to="/">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link text-white" to="/signIn">My Account</Link>
+                            <Link class="nav-link text-white" to="/myAccount">My Account</Link>
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link text-white" to="/news">News</Link>

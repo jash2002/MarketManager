@@ -15,15 +15,19 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/Sign_In";
 import Home from "./pages/Home";
 import News from "./pages/News";
+import MyAccount from "./pages/MyAccount";
 import NotFound from "./pages/NotFound";
 import ForgotPassword from "./pages/ForgottenPassword";
 import EmailSent from "./pages/EmailSent";
 import Dashboard from './pages/Dashboard';
-import { AuthProvider } from './context/AuthProvider'
+import { AuthProvider } from './context/AuthProvider';
+import AuthContext from './context/AuthProvider';
 import {useContext, createContext} from 'react';
 
 
 function App() {
+
+  const { auth, setAuth } = useContext(AuthContext);
 
   return (
     <div className="main-container">
@@ -32,9 +36,10 @@ function App() {
       <Navbar />
         <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/dashboard" element={<Dashboard />}></Route>
+        <Route exact path="/dashboard" element={<Dashboard auth={auth}/>}></Route>
         <Route exact path="/signIn" element={<SignIn />}></Route>
         <Route exact path="/signUp" element={<SignUp />}></Route>
+        <Route exact path="/myAccount" element={<MyAccount />}></Route>
         <Route exact path="/forgottenPassword" element={<ForgotPassword />}></Route>
         <Route exact path="/emailSent" element={<EmailSent />}></Route>      
         <Route exact path="/news" element={<News />}></Route>

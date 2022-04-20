@@ -65,6 +65,10 @@ class CandleStickChart extends React.Component {
         .then(
             function(data) {
                 var parsedResponse = JSON.parse(JSON.stringify(data))
+                if (parsedResponse.status == "error") {
+                    alert("Data limit reached. Please wait 60 secs.");
+                    return;
+                }
                 const parsedData = parsedResponse.values
                 var formattedData = []
                 // Reformat data into date and floats.

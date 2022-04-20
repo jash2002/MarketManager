@@ -1,24 +1,32 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import ChartCard from '../components/ChartCard';
 import {Button} from 'react-bootstrap'
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import AuthContext from '../context/AuthProvider';
+import { useNavigate } from "react-router-dom";
 
-class Home extends Component {
-    render() {
-        return (
-// Hella home page headers to check how footer worked (lol)
-            <div>
-                <h1 className="welcome">Welcome to MarketManager</h1>
-                <h3 className="welcome-body">The simplest way to track your investments.</h3>
-                <div className="start-button">
-                    <Button as={Link} to="./signIn" variant="primary" size="lg">Get Started</Button>
-                </div>
-                <div className="start-button">
-                    <Button as={Link} to="./Dashboard" variant="secondary" size="lg">Test Dashboard</Button>
-                </div>
+const Home = () => {
+
+    const { auth, setAuth } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (auth.accessToken != undefined) {
+            console.log("Logged in, going to dashboard");
+            navigate("/dashboard");
+        }
+    },[]);
+
+    return (
+        <div>
+            <h1 className="welcome">Welcome to MarketManager</h1>
+            <h3 className="welcome-body">The simplest way to track your investments.</h3>
+            <div className="start-button">
+                <Button as={Link} to="./signIn" variant="primary" size="lg">Get Started</Button>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-export default Home
+export default Home;

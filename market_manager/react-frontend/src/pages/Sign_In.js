@@ -12,8 +12,15 @@ const LOGIN_URL = '/api/signin';
 
 const Sign_In = () => {
 
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (auth.accessToken != undefined) {
+        console.log("Logged in, going to my account");
+        navigate("/signIn");
+    }
+  },[]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -36,7 +36,7 @@ function App() {
       <Navbar />
         <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/dashboard" element={<Dashboard auth={auth}/>}></Route>
+        <Route exact path="/dashboard" element={<Dashboard />}></Route>
         <Route exact path="/signIn" element={<SignIn />}></Route>
         <Route exact path="/signUp" element={<SignUp />}></Route>
         <Route exact path="/myAccount" element={<MyAccount />}></Route>

@@ -9,10 +9,13 @@ class ChartCard extends Component {
         var d = new Date()
         d.setDate(d.getDate()-1);
         this.state = ({
-            APIparams: 'symbol='+this.props.ticker+'&start_date='+this.toAPIdateString(d)+'&interval=5min',
-            ticker: props.ticker
+            APIparams: 'symbol='+this.props.ticker+'&start_date='+this.toAPIdateString(d)+'&interval=1min',
+            ticker: props.ticker,
+            series: [],
+            type: 'time_series?',
         })
         this.handleSelect = this.handleSelect.bind(this)
+        this.fetchStocksSeries(this.state.APIparams);
     }
 
     toAPIdateString(d) {
@@ -25,6 +28,7 @@ class ChartCard extends Component {
         var d = new Date()
         var currentParams = 'symbol='+this.state.ticker
         var newAPIparams = ''
+        console.log(key);
         switch (key) {
             case 'today':
                 d.setDate(d.getDate()-1);
@@ -44,9 +48,12 @@ class ChartCard extends Component {
         this.setState({
             APIparams: newAPIparams
         })
+        this.fetchStocksSeries(newAPIparams);
+        console.log('State changed');
     }
 
     render() {
+        console.log("rendering...");
         return (
             <div style={{margin: 0}}>
                 <Card style = {{width : '100%', padding:0, marginLeft:0, marginRight:0}}>
@@ -64,11 +71,58 @@ class ChartCard extends Component {
                         </Nav>
                     </Card.Header>
                     <Card.Body>
-                        <CandleStickChart ticker={this.state.ticker} APIparams={this.state.APIparams} height={450} width='100%'/>
+                        <CandleStickChart ticker={this.state.ticker} series={this.state.series} height={450} width='100%'/>
                     </Card.Body>
                 </Card>
             </div>
         );
+    }
+
+    /**
+    * Fetch stock data to API and store in state.
+    */
+    fetchStocksSeries(APIparams) {
+        /**
+         * TODO: Fetch API key from backend.
+         * Unsafe to really store in React files, and have it on github.
+         * For now, copy from discord, and remove before commiting.
+         */
+        const API_KEY = '1342ec4264ea43d384a7ad5673a7d5ac'
+        let API_Call = 'https://api.twelvedata.com/'+this.state.type+APIparams+'&apikey='+API_KEY;
+        const that = this;
+        console.log(API_Call)
+        fetch(API_Call)
+        .then(
+            function(response) {
+                return response.json();
+            }
+        )
+        .then(
+            function(data) {
+                var parsedResponse = JSON.parse(JSON.stringify(data))
+                if (parsedResponse.status == "error") {
+                    alert("Data limit reached. Please wait 60 secs.");
+                    return;
+                }
+                const parsedData = parsedResponse.values
+                var formattedData = []
+                // Reformat data into date and floats.
+                for (var currentInterval in parsedData) {
+                    formattedData.push(
+                        [
+                            +new Date(parsedData[currentInterval].datetime),
+                            parseFloat(parsedData[currentInterval].open),
+                            parseFloat(parsedData[currentInterval].high),
+                            parseFloat(parsedData[currentInterval].low),
+                            parseFloat(parsedData[currentInterval].close)
+                        ]
+                    )
+                }
+                const newData = [{data: formattedData}]
+                // Update data for graph.
+                that.setState({series: newData});
+            }
+        )
     }
 }
 

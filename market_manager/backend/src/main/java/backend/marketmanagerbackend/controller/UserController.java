@@ -28,8 +28,10 @@ import backend.marketmanagerbackend.payload.response.MessageResponse;
 import backend.marketmanagerbackend.security.jwt.JwtUtils;
 import backend.marketmanagerbackend.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
+// @CrossOrigin(origins = "http://88.106.1.65:3000")
+
 @RequestMapping("/api")
 public class UserController {
 

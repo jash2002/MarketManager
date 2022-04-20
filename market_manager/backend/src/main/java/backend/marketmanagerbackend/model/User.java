@@ -32,9 +32,8 @@ public class User {
 
     private String tickers;
 
-    // public User() {
-
-    // }
+    public User() {
+    }
 
     public User(String email, String password, String tickers) {
         super();

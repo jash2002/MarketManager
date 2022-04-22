@@ -27,21 +27,18 @@ const Dashboard = () => {
             </div>
             <ChartGrid tickers={tickers} />
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} id="the-popup">
+                <Form>
                 <h3>Add a new asset</h3>
-                {/* https://stackoverflow.com/questions/57063568/react-select-drop-down-menu-change-default-text */}
-                <select class="form-select" aria-label="Default select example">
+                <Form.Select class="form-select" aria-label="Default select example">
                     <option value="us" selected>US Stocks</option>
                     <option value="fx">Forex</option>
-                </select>
-                <h5>What asset would you like to track</h5>
+                </Form.Select>
+                <h5 className="pt-4">What asset would you like to track</h5>
                 <Form.Control size="lg" type="text" placeholder="Enter asset here" id="ticker-name" />
-                <div className="d-flex justify-content-end">
-                    <Button variant="primary" size="lg" id="add-btn">Add</Button>
+                <div className="d-flex justify-content-end pt-4">
+                    <Button variant="primary" size="lg" id="add-btn" type="submit">Add</Button>
                 </div>
-
-                {/* Dropdown for US Stock or Foreign Exchange */}
-                {/* Blank text box for Stock/Forex*/}
-                {/* Do not do want you want to trade */}
+                </Form>
             </Popup>
         </div>
     );

@@ -1,0 +1,69 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+}
+
+.popup-inner .close-btn {
+    transform: rotate(45deg);
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.popup-inner > * {
+    display: block;
+    margin-top: 15px;
+}
+
+.popup-inner > *:first-child {
+    margin-top: 0px;
+}
+
+#dropdown-basic {
+    border: 1px solid black;
+    width: 80%;
+    text-align: start;
+}
+
+#dropdown-menu {
+    width: 80%;
+}
+
+#ticker-name {
+    width: 80%;
+}
+
+.popup-inner {
+    border-radius: 2%;
+    border: 1px solid black;
+    /* background-color: red; */
+}
+
+#add-btn {
+    /* background-color: red; */
+    width: 25%;
+    /* display: flex; */
+    /* justify-content: end; */
+}
+
+#btn-format {
+    
+    background-color: gray;
+}

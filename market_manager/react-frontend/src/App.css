@@ -15,7 +15,7 @@
   height: 83vh;
 }
 /* Specific for the same reason as above */
-.not-found-page, .emailSent {
+.not-found-page, .emailSent, .tester {
   height: 88vh;
 }
 
@@ -91,6 +91,63 @@
 
 .card-body a {
   color: #000;
+}
+
+.tester{
+  /* background-color: red; */
+  /* min-height: 100vh; */
+}
+
+.account-body {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.account-heading {
+  display: flex;
+  /* background-color: aqua; */
+  justify-content: center;
+  flex-direction: column;
+}
+
+.account-main {
+  height: 70%;
+  background-color: orange;
+}
+
+.account-body {
+  /* background-color: gray; */
+  width: 100%
+}
+
+.account-tickers {
+  /* background-color: bisque; */
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  position:relative;
+}
+
+.the-assets {
+  /* background-color: green; */
+  position:absolute;
+  margin-top: 10%;
+  height: 50%;
+  width: 80%;
+}
+
+.account-bottom {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  align-items:center;
+  justify-content: space-around;
+  /* background-color: navy; */
+  justify-content: center;
+  bottom:0px;
+  right: 0px;
+    
 }
 
 /* No styling yet for mobile version */

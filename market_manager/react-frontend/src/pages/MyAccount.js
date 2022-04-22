@@ -16,16 +16,6 @@ const MyAccount = () => {
         navigate("/");
     }
 
-    useEffect(() => {
-        if (auth.accessToken === undefined) {
-            console.log("Not logged in, going to sign in");
-            navigate("/signIn");
-        } else {
-            tickers = auth.tickers.split(',');
-        }
-    }, []);
-
-
     const tester = () => {
         let usersHour = new Date().getHours();
         if (usersHour >= 6 && usersHour < 12) { return "Good Morning"; }

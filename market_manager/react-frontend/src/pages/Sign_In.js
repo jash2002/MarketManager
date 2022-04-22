@@ -1,26 +1,19 @@
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { UilPlus } from '@iconscout/react-unicons'
-import { useEffect, useContext } from 'react';
 import UserComponent from '../components/UserComponent';
 import AuthContext from '../context/AuthProvider';
 import axios from '../API/Axios';
 import { useNavigate } from "react-router-dom";
+import useAuth from '../hooks/useAuth';
 
 const LOGIN_URL = '/api/signin';
 
 
 const Sign_In = () => {
 
-  const { auth, setAuth } = useContext(AuthContext);
+  const {  setAuth } = useAuth();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (auth.accessToken != undefined) {
-        console.log("Logged in, going to my account");
-        navigate("/signIn");
-    }
-  },[]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -8,16 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
-    const { auth, setAuth } = useContext(AuthContext);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (auth.accessToken != undefined) {
-            console.log("Logged in, going to dashboard");
-            navigate("/dashboard");
-        }
-    },[]);
-
     return (
         <div>
             <h1 className="welcome">Welcome to MarketManager</h1>

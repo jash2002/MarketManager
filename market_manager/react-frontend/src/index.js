@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider'
 
 
 ReactDOM.render(
   <>
-    <AuthProvider>
-      <Router>
-        <App />
-      </Router>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+          <Routes>
+            <Route path="/*" element={<App />}/>
+          </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   </>,
   document.getElementById('root')
 );

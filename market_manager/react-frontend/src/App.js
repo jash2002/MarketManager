@@ -23,6 +23,8 @@ import Dashboard from './pages/Dashboard';
 import { AuthProvider } from './context/AuthProvider';
 import AuthContext from './context/AuthProvider';
 import {useContext, createContext} from 'react';
+import Layout from './components/Layout';
+import RequireAuth from './components/RequireAuth';
 
 
 function App() {
@@ -35,15 +37,19 @@ function App() {
     {/* <div className="App"> */}
       <Navbar />
         <Routes>
-        <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/dashboard" element={<Dashboard />}></Route>
-        <Route exact path="/signIn" element={<SignIn />}></Route>
-        <Route exact path="/signUp" element={<SignUp />}></Route>
-        <Route exact path="/myAccount" element={<MyAccount />}></Route>
-        <Route exact path="/forgottenPassword" element={<ForgotPassword />}></Route>
-        <Route exact path="/emailSent" element={<EmailSent />}></Route>      
-        <Route exact path="/news" element={<News />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
+          <Route path="/" element={<Layout/>}>
+            <Route exact path="/" element={<Home />}/>
+            <Route element={<RequireAuth/>}>
+              <Route exact path="dashboard" element={<Dashboard />}/>
+              <Route exact path="myAccount" element={<MyAccount />}/>
+            </Route>
+            <Route exact path="signIn" element={<SignIn />}/>
+            <Route exact path="signUp" element={<SignUp />}/>
+            <Route exact path="forgottenPassword" element={<ForgotPassword />}/>
+            <Route exact path="emailSent" element={<EmailSent />}/>     
+            <Route exact path="news" element={<News />}/>
+            <Route path="*" element={<NotFound />}/>
+          </Route>
       </Routes>
       <Footer />
       {/* </div> */}

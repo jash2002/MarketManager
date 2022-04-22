@@ -1,0 +1,136 @@
+.
+├── a.txt
+├── backend
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   └── backend
+│   │       │       └── marketmanagerbackend
+│   │       │           ├── MarketManagerBackendApplication.java
+│   │       │           ├── controller
+│   │       │           │   └── UserController.java
+│   │       │           ├── model
+│   │       │           │   └── User.java
+│   │       │           ├── payload
+│   │       │           │   ├── request
+│   │       │           │   │   ├── LoginRequest.java
+│   │       │           │   │   ├── SignupRequest.java
+│   │       │           │   │   └── TickersUpdateRequest.java
+│   │       │           │   └── response
+│   │       │           │       ├── JwtResponse.java
+│   │       │           │       └── MessageResponse.java
+│   │       │           ├── repository
+│   │       │           │   └── UserRepository.java
+│   │       │           └── security
+│   │       │               ├── WebSecurityConfig.java
+│   │       │               ├── jwt
+│   │       │               │   ├── AuthEntryPointJwt.java
+│   │       │               │   ├── AuthTokenFilter.java
+│   │       │               │   └── JwtUtils.java
+│   │       │               └── services
+│   │       │                   ├── UserDetailsImpl.java
+│   │       │                   └── UserDetailsServiceImpl.java
+│   │       └── resources
+│   │           ├── application.properties
+│   │           └── application.yaml
+│   └── target
+│       ├── classes
+│       │   ├── application.properties
+│       │   ├── application.yaml
+│       │   └── backend
+│       │       └── marketmanagerbackend
+│       │           ├── MarketManagerBackendApplication.class
+│       │           ├── controller
+│       │           │   └── UserController.class
+│       │           ├── model
+│       │           │   └── User.class
+│       │           ├── payload
+│       │           │   ├── request
+│       │           │   │   ├── LoginRequest.class
+│       │           │   │   ├── SignupRequest.class
+│       │           │   │   └── TickersUpdateRequest.class
+│       │           │   └── response
+│       │           │       ├── JwtResponse.class
+│       │           │       └── MessageResponse.class
+│       │           ├── repository
+│       │           │   └── UserRepository.class
+│       │           └── security
+│       │               ├── WebSecurityConfig.class
+│       │               ├── jwt
+│       │               │   ├── AuthEntryPointJwt.class
+│       │               │   ├── AuthTokenFilter.class
+│       │               │   └── JwtUtils.class
+│       │               └── services
+│       │                   ├── UserDetailsImpl.class
+│       │                   └── UserDetailsServiceImpl.class
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── generated-test-sources
+│       │   └── test-annotations
+│       ├── maven-status
+│       │   └── maven-compiler-plugin
+│       │       └── compile
+│       │           └── default-compile
+│       │               ├── createdFiles.lst
+│       │               └── inputFiles.lst
+│       └── test-classes
+├── pom.xml
+└── react-frontend
+    ├── README.md
+    ├── node_modules
+    │   
+    ├── package-lock.json
+    ├── package.json
+    ├── pom.xml
+    ├── public
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   ├── logo192.png
+    │   ├── logo512.png
+    │   ├── manifest.json
+    │   └── robots.txt
+    ├── src
+    │   ├── API
+    │   │   └── Axios.js
+    │   ├── App.css
+    │   ├── App.js
+    │   ├── App.test.js
+    │   ├── components
+    │   │   ├── CandleStickChart.js
+    │   │   ├── ChartCard.js
+    │   │   ├── ChartGrid.js
+    │   │   ├── Popup.css
+    │   │   ├── Popup.js
+    │   │   ├── UserComponent.js
+    │   │   ├── services
+    │   │   │   ├── UserService.js
+    │   │   │   └── WithRouter.js
+    │   │   ├── theFooter.js
+    │   │   └── theNavbar.js
+    │   ├── context
+    │   │   └── AuthProvider.js
+    │   ├── index.css
+    │   ├── index.js
+    │   ├── logo.svg
+    │   ├── pages
+    │   │   ├── Dashboard.js
+    │   │   ├── EmailSent.js
+    │   │   ├── ForgottenPassword.js
+    │   │   ├── Help.js
+    │   │   ├── Home.js
+    │   │   ├── MyAccount.js
+    │   │   ├── News.js
+    │   │   ├── NewsCard.js
+    │   │   ├── NewsList.js
+    │   │   ├── NotFound.js
+    │   │   ├── SignUp.js
+    │   │   └── Sign_In.js
+    │   ├── reportWebVitals.js
+    │   └── setupTests.js
+    └── target
+        ├── market_manager_frontend-1.0.0-SNAPSHOT.jar
+        └── maven-archiver
+            └── pom.properties

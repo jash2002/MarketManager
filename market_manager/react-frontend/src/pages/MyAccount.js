@@ -9,7 +9,7 @@ const MyAccount = () => {
 
     const { auth, setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
-    var tickers = [];
+    var tickers = auth.tickers;
 
     const signOut = () => {
         setAuth({});
@@ -24,17 +24,17 @@ const MyAccount = () => {
         else { return "Good Night"; }
     }
 
-    const separateTickers = () => {
-        let tickersList = "";
-        for(let i = 0; i < tickers.length; i++) {
-            if(i == tickers.length - 1) {
-                tickersList += tickers[i] + ".";
-            } else {
-                tickersList += tickers[i] + ", ";
-            }
-        }
-        return tickersList
-    }
+    // const separateTickers = () => {
+    //     let tickersList = "";
+    //     for(let i = 0; i < tickers.length; i++) {
+    //         if(i == tickers.length - 1) {
+    //             tickersList += tickers[i] + ".";
+    //         } else {
+    //             tickersList += tickers[i] + ", ";
+    //         }
+    //     }
+    //     return tickersList
+    // }
 
     return (
         <div className="tester d-flex justify-content-center">
@@ -48,7 +48,7 @@ const MyAccount = () => {
 
                         <h3>The assets you are currently watching:</h3>
                         <div className="the-assets d-flex justify-content-center">
-                            <h4>{separateTickers()}</h4>
+                            <h4>{tickers}</h4>
                         </div>
                         {/* <p>Hi</p>
                         <ul>{separateTickers()}</ul> */}

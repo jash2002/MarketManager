@@ -8,11 +8,13 @@ function Footer() {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col d-flex justify-content-around align-items-center">
-                            <h4>Created By James, Jon, Raz, Owen, Matty, and Simon</h4>
-                        <p className="text-xs-center">
-                            &copy;{new Date().getFullYear()} COMP208
-                        </p>
+                        <div className="footer col d-flex justify-content-around align-items-center">
+                            <h7>Created By James, Jon, Raz, Owen, Matty, and Simon </h7>
+                            <h7>&copy;{new Date().getFullYear()} COMP208 </h7>
+                            
+                        {/* <p className="text-xs-center">
+                            
+                        </p> */}
                     {/* </div> */}
                         </div>
                     </div>

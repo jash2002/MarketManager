@@ -9,7 +9,7 @@ const MyAccount = () => {
 
     const { auth, setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
-    const tickers = auth.tickers.split(',');
+    var tickers = [];
 
     const signOut = () => {
         setAuth({});
@@ -20,6 +20,8 @@ const MyAccount = () => {
         if (auth.accessToken === undefined) {
             console.log("Not logged in, going to sign in");
             navigate("/signIn");
+        } else {
+            tickers = auth.tickers.split(',');
         }
     }, []);
 

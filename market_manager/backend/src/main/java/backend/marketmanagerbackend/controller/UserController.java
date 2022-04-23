@@ -30,7 +30,6 @@ import backend.marketmanagerbackend.security.services.UserDetailsImpl;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-// @CrossOrigin(origins = "http://88.106.1.65:3000")
 
 @RequestMapping("/api")
 public class UserController {

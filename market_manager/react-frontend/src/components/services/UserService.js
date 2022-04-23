@@ -1,8 +1,6 @@
 import axios from 'axios'
 
 const USERS_REST_API_URL = 'http://localhost:8081/api/users';
-// const USERS_REST_API_URL = 'http://88.106.1.65:8081/api/users';
-
 
 class UserService {
 

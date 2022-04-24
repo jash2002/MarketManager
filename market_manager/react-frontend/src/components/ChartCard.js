@@ -24,11 +24,11 @@ class ChartCard extends Component {
     }
 
     handleSelect(key) {
-        console.log('handling select')
+        //console.log('handling select')
         var d = new Date()
         var currentParams = 'symbol='+this.state.ticker
         var newAPIparams = ''
-        console.log(key);
+        //console.log(key);
         switch (key) {
             case 'today':
                 d.setDate(d.getDate()-1);
@@ -49,11 +49,11 @@ class ChartCard extends Component {
             APIparams: newAPIparams
         })
         this.fetchStocksSeries(newAPIparams);
-        console.log('State changed');
+        //console.log('State changed');
     }
 
     render() {
-        console.log("rendering...");
+        //console.log("rendering...");
         return (
             <div style={{margin: 0}}>
                 <Card style = {{width : '100%', padding:0, marginLeft:0, marginRight:0}}>
@@ -90,7 +90,7 @@ class ChartCard extends Component {
         const API_KEY = '1342ec4264ea43d384a7ad5673a7d5ac'
         let API_Call = 'https://api.twelvedata.com/'+this.state.type+APIparams+'&apikey='+API_KEY;
         const that = this;
-        console.log(API_Call)
+        //console.log(API_Call)
         fetch(API_Call)
         .then(
             function(response) {
@@ -100,8 +100,10 @@ class ChartCard extends Component {
         .then(
             function(data) {
                 var parsedResponse = JSON.parse(JSON.stringify(data))
-                if (parsedResponse.status == "error") {
-                    alert("Data limit reached. Please wait 60 secs.");
+                if (parsedResponse.status === "error") {
+                    if (parsedResponse.code === "429") {
+                        alert("Data limit reached. Please wait 60 secs.");
+                    }
                     return;
                 }
                 const parsedData = parsedResponse.values

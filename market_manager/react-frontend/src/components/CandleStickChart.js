@@ -43,14 +43,14 @@ class CandleStickChart extends React.Component {
     
     componentDidUpdate(prevProps) {
         if (this.props.series !== prevProps.series) {
-            console.log("setting state")
+            //console.log("setting state")
             this.setState({series : this.props.series});
         }
     }
 
     render(){
-        console.log("Rendering chart...");
-        console.log(this.state.series);
+        //console.log("Rendering chart...");
+        //console.log(this.state.series);
         return (
             <div>
                 <Chart

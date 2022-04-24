@@ -22,7 +22,7 @@ const SignUp = () => {
             alert("Passwords do not match");
             return;
         }
-        const tickers = "AAPL,IBM";
+        const tickers = "IBM,AAPL";
         try {
             const response = await axios.post(LOGIN_URL,JSON.stringify({username, email, password, tickers}),
             {

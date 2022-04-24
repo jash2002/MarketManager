@@ -33,7 +33,7 @@ const Sign_In = () => {
     } catch (err) {
       if (!err?.response) {
         alert('No Server Response');
-        console.log(err);
+        //console.log(err);
       } else if (err.response?.status === 400) {
         alert('Missing Username or Password');
       } else if (err.response?.status === 401) {
